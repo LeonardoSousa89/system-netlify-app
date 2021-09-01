@@ -10,8 +10,34 @@
 </head>
 <body>
     <div class="container">
-        <div class="image"></div>
-        <div class="form"></div>
+        <div class="image">
+            <img src="./assets/pizza.png" alt="">
+        </div>
+        <div class="form">
+            <form action="">
+                <h3><strong>Login</strong></h3>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
+                  </div>
+
+                  <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                  </div>
+
+                  <button type="button" class="btn btn-warning" id="enter">enter</button>
+
+                  <div class="alert alert-warning" id="alert_login" role="alert">
+                       <strong>login incorrect!</strong> 
+                  </div>
+
+                  <div class="alert alert-warning" id="alert_empty" role="alert">
+                    <strong>please insert all fields value!</strong> 
+               </div>
+            </form>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
