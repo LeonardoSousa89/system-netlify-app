@@ -17,10 +17,16 @@ $('#enter').click(function(){
         fetch(url)
             .then(data => data.json())
             .then(data => {
-                data.filter(e=>{
-                    if(e.user == email && e.password == pass){
+                data.map((e,i)=>{
+                   
+                    let userI     = e.user 
+                    let passwordI = e.password
+
+                    if(userI == email && passwordI == pass){
+                        
                         doc.location.href = '../store/index.html'
                         storage(email, pass)
+
                     }else if(e.user != email && e.password != pass){
                         $('#alert_login').show(100)
                     }
