@@ -90,6 +90,9 @@ and (orientation:portrait) {
     }
     .form{
         padding:10%;
+
+        border-bottom-left-radius:6px;
+        border-top-left-radius:6px;
     }
     .container{
     
