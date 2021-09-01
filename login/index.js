@@ -19,17 +19,9 @@ $('#enter').click(function(){
             .then(data => {
                 data.map(e=>{
 
-                    if(     email == e.user.match('mendes@outlook.com')
+                    if(     email == e.user
                         &&
-                            pass == e.password.match('1234')
-                        ||
-                            email == e.user.match('devfl@gmail.com')
-                        &&
-                            pass == e.password.match('1054')
-                        ||
-                            email == e.user.match('devrct@yahoo.com')
-                        &&
-                            pass == e.password.match('1235')
+                            pass == e.password
                         ){
                             doc.location.href = '../store/index.html'
                             storage(email, pass)
