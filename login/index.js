@@ -17,19 +17,26 @@ $('#enter').click(function(){
         fetch(url)
             .then(data => data.json())
             .then(data => {
-                data.map((e,i)=>{
-                   
-                    let userI     = e.user 
-                    let passwordI = e.password
+                data.map(e=>{
 
-                    if(userI == email && passwordI == pass){
-                        
-                        doc.location.href = '../store/index.html'
-                        storage(email, pass)
-
-                    }else if(e.user != email && e.password != pass){
+                    if(     email == e.user.match('mendes@outlook.com')
+                        &&
+                            pass == e.password.match('1234')
+                        ||
+                            email == e.user.match('devfl@gmail.com')
+                        &&
+                            pass == e.password.match('1054')
+                        ||
+                            email == e.user.match('devrct@yahoo.com')
+                        &&
+                            pass == e.password.match('1235')
+                        ){
+                            doc.location.href = '../store/index.html'
+                            storage(email, pass)
+                    }else{
                         $('#alert_login').show(100)
                     }
+
                 })
             })
             .catch(err => console.log(err))
@@ -50,3 +57,51 @@ function storage(email, pass){
     localStorage.setItem('_USER',email)
     localStorage.setItem('_PASS',pass)
 }
+
+function testeArray(){
+    $('#enter').click(function(){
+        let email = document.querySelector('#floatingInput'   ).value
+        let pass  = document.querySelector('#floatingPassword').value
+    
+        if(email == '' || pass == ''){
+            $('#alert_empty').show(100)
+        }else{
+            const url = '../login/mock.json'
+    
+            fetch(url)
+                .then(data => data.json())
+                .then(data => {  
+                    data.some(e=>{
+                        console.log(  e.user[0] 
+                                    + e.user[1] 
+                                    + e.user[2] 
+                                    + e.user[3] 
+                                    + e.user[4] 
+                                    + e.user[5])
+                        console.log(e.user.match('devrct'))
+
+                        if( email == e.user.match('mendes@outlook.com')
+                            &&
+                                pass == e.password.match('1234')
+                            ||
+                                email == e.user.match('devfl@gmail.com')
+                            &&
+                                pass == e.password.match('1054')
+                            ||
+                                email == e.user.match('devrct@yahoo.com')
+                            &&
+                                pass == e.password.match('1235')
+                            ){
+                                doc.location.href = '../store/index.html'
+                                storage(email, pass)
+                        }else{
+                                $('#alert_login').show(100)
+                        }
+                        
+                    })
+                })
+                .catch(err => console.log(err))
+        }
+    })
+}
+//testeArray()
