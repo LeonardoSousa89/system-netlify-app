@@ -21,7 +21,7 @@ $('#enter').click(function(){
                     if(e.user == email && e.password == pass){
                         doc.location.href = '../store/index.html'
                         storage(email, pass)
-                    }else{
+                    }else if(e.user != email && e.password != pass){
                         $('#alert_login').show(100)
                     }
                 })
