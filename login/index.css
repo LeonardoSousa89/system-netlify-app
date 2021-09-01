@@ -79,6 +79,9 @@ and (orientation:portrait) {
     }
 } 
 @media (max-device-width:1023px) {
+    body{
+        overflow:scroll;
+    }
     .image{
         display:none;
     }
