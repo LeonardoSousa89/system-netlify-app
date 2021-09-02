@@ -7,10 +7,49 @@ body{
     background:linear-gradient(63deg, #6A736F 45%, #CBCFD1 55%);
 }
 header{
+    overflow:hidden;
     grid-area:header;
     border:solid 1px red;
     height:100%;
     width:100%;
+
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+
+    padding:3px;
+}
+.logo,.social_header{
+    width:50%;
+    overflow:hidden;
+}
+.logo #logo_pizza{
+    height:110px;
+    width:110px;
+}
+.social_header{
+    width:30%;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+}
+#facebook{
+    color:darkblue;
+}
+#twitter{
+    color:blue;
+}
+#instagram{
+    color:darkred; 
+}
+.cart{
+    width:20%; 
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-end;
+}
+#car{
+    color:black; 
 }
 aside{
     grid-area:aside;
@@ -24,11 +63,39 @@ main{
     height:100%;
     width:100%;
 
-    overflow-y:scroll;
+    overflow-y:hidden;
     position:relative;
+
+    display:grid;
+    grid-template-columns:1%fr;
+    grid-template-rows:20% ;
+    grid-template-areas:
+        'el el'
+        'pr pr'
+    ;
 }
 .element{
-    position:fixed;
+    grid-area:el;
+    display:flex;
+    justify-content:end;
+    align-items:flex-end;
+
+    height:100%;
+    width:100%;
+    border:solid 1px red;
+}
+#cash{
+    color:darkolivegreen;
+}
+.prod{
+    grid-area:pr; 
+    overflow-y:scroll;
+    height:100%;
+    width:100%;
+
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
 }
 footer{
     grid-area:footer;
@@ -39,7 +106,7 @@ footer{
 .container{
     height:100vh;
     width:80vw;
-    background-color:whitesmoke;
+    background-color:white;
     border:solid 1px pink;
 
     display:grid;
@@ -65,3 +132,4 @@ footer{
         ;
     }
 }
+
