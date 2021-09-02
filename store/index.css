@@ -9,7 +9,7 @@ body{
 header{
     overflow:hidden;
     grid-area:header;
-    border:solid 1px red;
+    /*border:solid 1px red;*/
     height:100%;
     width:100%;
 
@@ -132,4 +132,9 @@ footer{
         ;
     }
 }
-
+@media(max-device-width:1023px)
+and   (orientation:landscape){
+    .container{
+        display:none;
+    }
+}
